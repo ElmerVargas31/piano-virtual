@@ -1,0 +1,14 @@
+footer{
+    justify-content: space-evenly; align-items: center;
+
+    #logo-pie{
+        width: 32%;
+
+        img{width: 60px; height: 60px;}
+        h3{font-size: 30px;}
+    }
+
+    address{
+        color: $tono-amarillo; font-size: 18px;
+    }
+}

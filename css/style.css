@@ -1,0 +1,371 @@
+@charset "UTF-8";
+/*-----VARIABLES - ESTILOS GENERALES-----*/
+/*Reset CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*Flexbox*/
+header, #logo-enc, #que-es-el-piano,
+#piano-contenedor, footer, #logo-pie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*Estilos Generales del Sitio*/
+body {
+  background: #f5f5f5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+#logo-enc, #logo-pie {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#logo-enc:focus-visible, #logo-pie:focus-visible {
+  outline: none;
+  border: 1px solid #FFCF70;
+}
+
+#logo-enc h1, #logo-pie h3 {
+  font-family: "Lucida Calligraphy";
+  color: #fff;
+}
+
+nav ul li a, h2, figcaption, address {
+  font-family: "Constantia";
+}
+
+h2 {
+  text-align: center;
+  color: #57463b;
+  font-size: 28px;
+  position: relative;
+}
+
+h2::after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 100px;
+  background: #57463b;
+  bottom: -3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+p, #piano-contenedor div, #instrucciones, #btn_piano button {
+  font-family: "Ebrima";
+  font-size: 16px;
+}
+
+/*Estructura del Sitio*/
+#wrapper {
+  width: 85%;
+  height: 100%;
+  margin: 5px auto;
+}
+
+header, footer {
+  height: 120px;
+  background: #57463b;
+}
+
+main {
+  background: #fff;
+  height: 100%;
+  padding: 20px 0;
+  -webkit-box-shadow: 0 0 6px 1px #cecece;
+          box-shadow: 0 0 6px 1px #cecece;
+}
+
+/*-----ENCABEZADO - CARRUSEL DE IMAGENES-----*/
+header {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header #logo-enc img {
+  width: 80px;
+  height: 80px;
+}
+
+header #logo-enc h1 {
+  font-size: 36px;
+}
+
+header nav {
+  width: 50%;
+  padding-left: 5%;
+  padding-top: 45px;
+}
+
+header nav a {
+  float: left;
+  color: #FFCF70;
+  font-size: 22px;
+  margin: 0 15px;
+}
+
+header nav a:hover, header nav a:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.carrusel-item {
+  background: #fff;
+  height: 500px;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+/*-----CONTENIDO PRINCIPAL-----*/
+/*1) Bloque: ¿Qué es el Piano?*/
+#que-es-el-piano {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 10px 0;
+}
+
+#piano-info {
+  width: 60%;
+  height: 100%;
+  margin-top: 25px;
+}
+
+#piano-info p {
+  margin: 20px 0;
+}
+
+#piano-info p a {
+  position: relative;
+  color: #57463b;
+  font-weight: bold;
+}
+
+#piano-info p a img {
+  position: absolute;
+  z-index: 1;
+  width: 190px;
+  height: 190px;
+  top: -195px;
+  left: -12px;
+  border: 5px solid #000;
+  display: none;
+}
+
+#piano-info p a:hover, #piano-info p a:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+#piano-info p a:hover img, #piano-info p a:focus-visible img {
+  display: block;
+}
+
+#piano-imgs {
+  width: 25%;
+}
+
+#piano-imgs figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px 0;
+}
+
+#piano-imgs figure img {
+  width: 260px;
+  height: 190px;
+}
+
+#piano-imgs figure .piano-partes {
+  -webkit-box-shadow: 0 0 6px 1px #cecece;
+          box-shadow: 0 0 6px 1px #cecece;
+}
+
+#piano-imgs figure figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #57463b;
+}
+
+/*2) Bloque: Piano en Línea*/
+#piano-en-linea {
+  padding: 30px 0;
+}
+
+/*Instrucciones para el piano en línea*/
+#instrucciones {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+#instrucciones strong {
+  color: #57463b;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/*Diseño del Piano y Teclas*/
+#piano-contenedor {
+  width: 75%;
+  height: 350px;
+  margin: 30px auto;
+  border: 20px solid #4D4D4D;
+  border-radius: 15px;
+}
+
+.tecla-blanca, .tecla-negra {
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+.tecla-blanca kbd, .tecla-negra kbd {
+  position: absolute;
+  padding: 6px;
+  display: none;
+  border-radius: 20px;
+  left: 32%;
+  bottom: 60px;
+}
+
+.tecla-blanca kbd.visible, .tecla-negra kbd.visible {
+  display: block;
+}
+
+.tecla-blanca p, .tecla-negra p {
+  display: none;
+}
+
+.tecla-blanca p.visible, .tecla-negra p.visible {
+  display: block;
+}
+
+.tecla-blanca {
+  width: 7%;
+  height: 310px;
+  color: #000;
+  border: 1px solid #707070;
+  background: #fff;
+  padding-top: 260px;
+}
+
+.tecla-blanca kbd {
+  background: #57463b;
+  color: #fff;
+}
+
+.tecla-blanca:active, .tecla-blanca.active {
+  background: #f0f0f0;
+}
+
+.tecla-negra {
+  width: 35px;
+  height: 180px;
+  z-index: 1;
+  padding-top: 130px;
+  margin-right: -34.9px;
+  background: #4D4D4D;
+  color: #fff;
+  -webkit-transform: translateX(-18px);
+          transform: translateX(-18px);
+}
+
+.tecla-negra kbd {
+  background: #FFCF70;
+  color: #000;
+  left: 20%;
+}
+
+.tecla-negra:active {
+  background: #5a5a5a;
+}
+
+/*Botones interactivos para el piano*/
+#btn_piano {
+  text-align: center;
+}
+
+#btn_piano button {
+  margin: 0 10px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background: #57463b;
+  color: #fff;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  opacity: 0.8;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#btn_piano button:hover, #btn_piano button:focus-visible {
+  opacity: 1;
+}
+
+/*-----PIE DE PÁGINA-----*/
+footer {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer #logo-pie {
+  width: 32%;
+}
+
+footer #logo-pie img {
+  width: 60px;
+  height: 60px;
+}
+
+footer #logo-pie h3 {
+  font-size: 30px;
+}
+
+footer address {
+  color: #FFCF70;
+  font-size: 18px;
+}
+/*# sourceMappingURL=style.css.map */

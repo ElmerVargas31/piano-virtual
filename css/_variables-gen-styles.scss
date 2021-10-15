@@ -1,0 +1,75 @@
+//Variables
+$fuente-familia-logo: 'Lucida Calligraphy';
+$fuente-familia-primaria: 'Ebrima';
+$fuente-familia-secundaria: 'Constantia';
+$tono-cafe: #57463b;
+$tono-amarillo: #FFCF70;
+$negro-piano: #4D4D4D;
+
+/*Reset CSS*/ 
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+/*Flexbox*/
+header, #logo-enc, #que-es-el-piano, 
+#piano-contenedor, footer, #logo-pie{
+    display: flex;
+}
+
+/*Estilos Generales del Sitio*/
+body{background: #f5f5f5; user-select: none;}
+a{text-decoration: none;}
+ul{list-style: none;}
+#logo-enc, #logo-pie{
+    align-items: center; width: 40%; 
+    justify-content: space-evenly; 
+    
+    &:focus-visible{outline: none; border: 1px solid $tono-amarillo;}
+}
+#logo-enc h1, #logo-pie h3{
+    font-family: $fuente-familia-logo; color: #fff;
+}
+nav ul li a, h2, figcaption, address{font-family: $fuente-familia-secundaria;}
+h2{
+    text-align: center; color: $tono-cafe; 
+    font-size: 28px; position: relative; 
+
+    &::after{
+        position: absolute; content: '';
+        height: 3px; width: 100px; 
+        background: $tono-cafe;
+        bottom: -3px; left: 50%;
+        transform: translateX(-50%);
+    }
+}
+p, #piano-contenedor div, #instrucciones, #btn_piano button{
+    font-family: $fuente-familia-primaria; font-size: 16px;
+}
+@mixin box-shadow {
+    box-shadow: 0 0 6px 1px #cecece;
+}
+@mixin btns-interactivos-piano {
+    margin: 0 10px; padding: 10px;
+    outline: none; border: none; 
+    background: $tono-cafe; color: #fff;
+    transition: 200ms; opacity: 0.8;
+    cursor: pointer; border-radius: 5px;
+
+    &:hover, &:focus-visible{
+        opacity: 1;
+    }
+}
+
+/*Estructura del Sitio*/
+#wrapper{
+    width: 85%; height: 100%; margin: 5px auto;
+}
+header, footer{
+    height: 120px; background: $tono-cafe;
+}
+main{
+    background: #fff; height: 100%; 
+    padding: 20px 0; @include box-shadow();
+}
